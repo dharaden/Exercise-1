@@ -1,0 +1,17 @@
+---
+title: "Exercise 1"
+author: "Dustin Haraden"
+date: "February 8, 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r libary}
+
+library(tidyverse)
+
+load('Data/21600-0001-Data.rda')
+
+```
+
