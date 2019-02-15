@@ -7,11 +7,37 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r libary}
+```{r library}
 
 library(tidyverse)
 
 load('Data/21600-0001-Data.rda')
+
+```
+
+```{r data prep}
+#Select the appropriate files that we want
+  #I just randomly picked a depression scale (H1FS1:H1FS19) that was within the dataset. I also am including sex(BIO_SEX), grade (H1GI20), number of hobbies (H1DA2) and ID (AID)
+
+#Starts on p. 153
+
+data <- da21600.0001 %>% 
+  select(AID, BIO_SEX, H1GI20, H1DA2, H1FS1:H1FS19)
+
+#Rename Variables
+name <- c("id","sex",'grade','hob','dep1','dep2','dep3','dep4','dep5','dep6','dep7',
+           'dep8','dep9','dep10','dep11','dep12','dep13','dep14','dep15',
+           'dep16','dep17','dep18','dep19') #11 - HAPPY
+
+colnames(data) <- name
+
+
+
+
+
+
+
+
 
 ```
 
