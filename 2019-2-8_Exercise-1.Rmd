@@ -31,12 +31,10 @@ name <- c("id","sex",'grade','hob','dep1','dep2','dep3','dep4','dep5','dep6','de
 
 colnames(data) <- name
 
+df2 <- as.data.frame(sapply(data, as.character))
+df2 <- as.data.frame(sapply(df2, as.numeric))
 
-
-
-
-
-
+write.csv(df2,'Data/depress.csv')
 
 
 ```

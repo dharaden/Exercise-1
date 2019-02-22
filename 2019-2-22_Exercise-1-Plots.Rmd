@@ -1,0 +1,24 @@
+---
+title: "Exercise 1 Plots"
+author: "Dustin Haraden"
+date: "February 22, 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r library}
+library(tidyverse)
+library(psych)
+
+dep <- read.csv('Data/depress.csv')
+
+describe(dep$hob)
+
+```
+
+```{r histogram}
+ggplot(dep, aes(hob)) +
+  geom_histogram(binwidth = 2)
+```
+
