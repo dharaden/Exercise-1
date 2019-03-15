@@ -11,7 +11,7 @@ editor_options:
 ```{r library}
 library(tidyverse)
 library(psych)
-library(rmdrive)
+library(rmdrive) #https://github.com/ekothe/rmdrive
 library(dataMaid)
 
 
@@ -30,11 +30,30 @@ ggplot(dep, aes(hob)) +
   geom_histogram(binwidth = 2)
 ```
 
-
+#Google Drive library(rmdrive)
 write plain text 
 Here I am adding something on google drive
 
-```{r}
+```{r Google Drive}
+
+#To install
+  #devtools::install_github("ekothe/rmdrive")
+
+#Upload Markdown to Google Drive (Step 1)
+  #upload_rmd(file = 'markdown_name', gfile = 'googledrive_name')
+
+#Update the existing file in google drive with what you have in your markdown
+  #update_rmd(file = 'markdown_name', gfile = 'googledrive_name')
+
+#Download ("pull") the file from Google drive to work on in R
+  #download_rmd(file = 'markdown_name', gfile = 'googledrive_name')
+
+```
+
+#RMarkdown 
+  https://bookdown.org/yihui/rmarkdown/ 
+  
+```{r Markdown stuff}
 mean_h <- round(mean(dep$dep19, na.rm=T), 3)
 ```
 
@@ -42,9 +61,17 @@ Mean of our **hobbies** was `r mean_h`
 
 Mean of hobbies variable is `r round(mean(dep$dep19, na.rm=T), 3)`
 
+#Tables
+
+sjPlot -> http://www.strengejacke.de/sjPlot/
+  Correlations -> http://www.strengejacke.de/sjPlot/reference/sjt.corr.html 
+  
+stargazer -> https://www.jakeruss.com/cheatsheets/stargazer/ 
+
+xtable -> https://www.rdocumentation.org/packages/xtable/versions/1.8-3/topics/xtable
+
 ```{r correlation}
 
-http://www.strengejacke.de/sjPlot/reference/sjt.corr.html 
 
 ```
 
