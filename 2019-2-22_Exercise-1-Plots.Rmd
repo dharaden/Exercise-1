@@ -7,18 +7,47 @@ editor_options:
   chunk_output_type: console
 ---
 
+
 ```{r library}
 library(tidyverse)
 library(psych)
+library(rmdrive)
+library(dataMaid)
+
+
 
 dep <- read.csv('Data/depress.csv')
 
-describe(dep$hob)
+#clean(dep)
+#describe(dep$hob)
+
 
 ```
+
 
 ```{r histogram}
 ggplot(dep, aes(hob)) +
   geom_histogram(binwidth = 2)
 ```
 
+
+write plain text 
+Here I am adding something on google drive
+
+```{r}
+mean_h <- round(mean(dep$dep19, na.rm=T), 3)
+```
+
+Mean of our **hobbies** was `r mean_h`
+
+Mean of hobbies variable is `r round(mean(dep$dep19, na.rm=T), 3)`
+
+```{r correlation}
+
+http://www.strengejacke.de/sjPlot/reference/sjt.corr.html 
+
+```
+
+Table 1 Correlation
+
+`r sjt.corr(dep)` 
