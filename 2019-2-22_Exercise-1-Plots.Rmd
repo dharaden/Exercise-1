@@ -21,13 +21,24 @@ dep <- read.csv('Data/depress.csv')
 #clean(dep)
 #describe(dep$hob)
 
+dep <- dep %>% 
+  mutate(dep_sum = rowSums(.[6:24]))
+
 
 ```
 
 
-```{r histogram}
+```{r graphs}
 ggplot(dep, aes(hob)) +
   geom_histogram(binwidth = 2)
+
+ggplot(dep, aes(dep_sum)) + 
+  geom_dotplot(aes(fill=..x..)) + 
+  scale_fill_gradient(low = "red", high = "yellow")
+
+ggplot(data=dep[!is.na(dep$sex),],aes(as.factor(sex),dep_sum)) +
+  geom_violin(scale='area') +
+  theme_classic()
 ```
 
 #Google Drive library(rmdrive)
